@@ -1,4 +1,18 @@
-<h1>{{title}}</h1>
-<ul>
-  <li *ngFor="let professor of professores">{{professor.name}}</li>
-</ul>
+<app-titulo [titulo]="titulo"></app-titulo>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Disciplina</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let professor of professores">
+      <th scope="row">{{professor.id}}</th>
+      <td>{{professor.name}}</td>
+      <td>{{professor.materia}}</td>
+    </tr>
+  </tbody>
+</table>

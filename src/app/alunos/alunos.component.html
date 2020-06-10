@@ -1,21 +1,51 @@
-<app-titulo [titulo]="titulo"></app-titulo>
+<div *ngIf="SelectedStudent">
+  <div class="row">
+    <div class="mr-auto">
+      <app-titulo [titulo]="'Aluno: '+ SelectedStudent"></app-titulo>
+    </div>
+    <div class="mt-1">
+      <button class="btn btn-warning" (click)="clearStudent()">Lista Alunos</button>
+    </div>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <input type="text" class="form-control" 
+      aria-describedby="emailHelp" placeholder="Seu primeiro nome">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Sobrenome</label>
+      <input type="text" class="form-control" 
+      aria-describedby="emailHelp" placeholder="Seu sobrenome nome">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Telefone</label>
+      <input type="text" class="form-control" 
+      aria-describedby="celHelp" placeholder="Seu primeiro nome">
+      <small id="celHelp" class="form-text text-muted">Ex : (99) 99999-9999</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+</div>
 
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Nome</th>
-      <th scope="col">Sobrenome</th>
-      <th scope="col">Telefone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let aluno of alunos">
-      <th scope="row">{{aluno.id}}</th>
-      <td>{{aluno.name}}</td>
-      <td>{{aluno.sobrenome}}</td>
-      <td>{{aluno.telefone}}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="!SelectedStudent">
+  <app-titulo [titulo]="titulo"></app-titulo>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="selectStudent(aluno)">
+        <th scope="row">{{aluno.id}}</th>
+        <td>{{aluno.name}}</td>
+        <td>{{aluno.sobrenome}}</td>
+        <td>{{aluno.telefone}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

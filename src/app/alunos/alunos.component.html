@@ -1,51 +1,71 @@
-<div *ngIf="SelectedStudent">
-  <div class="row">
-    <div class="mr-auto">
-      <app-titulo [titulo]="'Aluno: '+ SelectedStudent"></app-titulo>
+<div class="row">
+
+  <div>
+    <input type="text" [(ngModel)]="TextoSimples">
+    <p>{{TextoSimples}}</p>
+  </div>
+  
+  <div class="col-sm-6" *ngIf="SelectedStudent">
+    <div class="row">
+      <div class="mr-auto">
+        <app-titulo [titulo]="'Cod.Aluno: '+ SelectedStudent.id"></app-titulo>
+      </div>
+      <div class="mt-1">
+        <button class="btn btn-outline-danger" (click)="clearStudent()">Fechar</button>
+      </div>
     </div>
-    <div class="mt-1">
-      <button class="btn btn-warning" (click)="clearStudent()">Lista Alunos</button>
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nome</label>
+        <input type="text" 
+        class="form-control" 
+        aria-describedby="emailHelp" 
+        placeholder="Seu primeiro nome"
+        value="{{SelectedStudent.nome}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Sobrenome</label>
+        <input type="text" 
+        class="form-control" 
+        aria-describedby="emailHelp" 
+        placeholder="Seu sobrenome nome"
+        value="{{SelectedStudent.sobrenome}}">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Telefone</label>
+        <input type="number" 
+        class="form-control" 
+        aria-describedby="celHelp" 
+        placeholder="Seu primeiro nome"
+        value="{{SelectedStudent.telefone}}">
+        <small id="celHelp" class="form-text text-muted">Ex : (99) 99999-9999</small>
+      </div>
+    </form>
+    <div class="form-group">
+      <button class="btn btn-success">Enviar</button>
     </div>
   </div>
-  <form>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Nome</label>
-      <input type="text" class="form-control" 
-      aria-describedby="emailHelp" placeholder="Seu primeiro nome">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Sobrenome</label>
-      <input type="text" class="form-control" 
-      aria-describedby="emailHelp" placeholder="Seu sobrenome nome">
-    </div>
-    <div class="form-group">
-      <label for="exampleInputEmail1">Telefone</label>
-      <input type="text" class="form-control" 
-      aria-describedby="celHelp" placeholder="Seu primeiro nome">
-      <small id="celHelp" class="form-text text-muted">Ex : (99) 99999-9999</small>
-    </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
+  
+  <div [ngClass]="{'col-sm-12':!SelectedStudent,'col-sm-6':SelectedStudent}">
+    <app-titulo [titulo]="titulo"></app-titulo>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Telefone</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="selectStudent(aluno)">
+          <th scope="row">{{aluno.id}}</th>
+          <td>{{aluno.nome}}</td>
+          <td>{{aluno.sobrenome}}</td>
+          <td>{{aluno.telefone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<div *ngIf="!SelectedStudent">
-  <app-titulo [titulo]="titulo"></app-titulo>
-  <table class="table table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Sobrenome</th>
-        <th scope="col">Telefone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="selectStudent(aluno)">
-        <th scope="row">{{aluno.id}}</th>
-        <td>{{aluno.name}}</td>
-        <td>{{aluno.sobrenome}}</td>
-        <td>{{aluno.telefone}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>

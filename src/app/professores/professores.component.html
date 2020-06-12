@@ -1,8 +1,31 @@
-
-
 <div *ngIf="SelectedTeacher">
-  <app-titulo [titulo]="'Professor: ' + SelectedTeacher"></app-titulo>
-  <button class="btn btn-default" (click)="clearTeacher()">Voltar</button>
+  <div class="row">
+    <div class="mr-auto">
+      <app-titulo [titulo]="'Professor: ' + SelectedTeacher.id"></app-titulo>
+    </div>
+    <div class="mt-1">
+      <button class="btn btn-warning" (click)="clearTeacher()">Lista Professores</button>
+    </div>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nome</label>
+      <input type="text" 
+      class="form-control" 
+      aria-describedby="emailHelp" 
+      placeholder="Seu primeiro nome"
+      value="{{SelectedTeacher.nome}}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Disciplina</label>
+      <input type="text" 
+      class="form-control" 
+      aria-describedby="celHelp" 
+      placeholder="Disciplina que leciona"
+      value="{{SelectedTeacher.materia}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
 </div>
 
 <div *ngIf="!SelectedTeacher">
@@ -16,14 +39,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let teacher of teachers" 
-      style="cursor: pointer;" (click)="selectTeacher(teacher)">
+      <tr *ngFor="let teacher of teachers" style="cursor: pointer;" (click)="selectTeacher(teacher)">
         <th scope="row">{{teacher.id}}</th>
-        <td>{{teacher.name}}</td>
+        <td>{{teacher.nome}}</td>
         <td>{{teacher.materia}}</td>
       </tr>
     </tbody>
   </table>
-  
-</div>
 
+</div>

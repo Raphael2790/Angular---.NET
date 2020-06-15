@@ -6,7 +6,7 @@
         <app-titulo [titulo]="'Cod.Aluno: '+ SelectedStudent.id"></app-titulo>
       </div>
       <div class="mt-1">
-        <button class="btn btn-outline-danger" (click)="clearStudent()">Fechar</button>
+        <button class="btn btn-sm btn-outline-danger" (click)="clearStudent()">Fechar</button>
       </div>
     </div>
     <form [formGroup]="AlunoForm" (submit)="alunoSubmit()">
@@ -46,21 +46,41 @@
     <table class="table table-hover">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">Visualizar</th>
+          <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Sobrenome</th>
           <th scope="col">Telefone</th>
+          <th scope="col">Opções</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let aluno of alunos" style="cursor: pointer;" (click)="selectStudent(aluno)">
-          <th scope="row">{{aluno.id}}</th>
+        <tr *ngFor="let aluno of alunos">
+          <td><button class="text-dark btn btn-sm btn-outline-warning"(click)="selectStudent(aluno)">Detalhes</button></td>
+          <td scope="row">{{aluno.id}}</td>
           <td>{{aluno.nome}}</td>
           <td>{{aluno.sobrenome}}</td>
           <td>{{aluno.telefone}}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Professores</button>
+              <button class="btn btn-sm btn-outline-danger">Desativar</button>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
+ 
+<ng-template #template>
+  <div class="modal-body">
+    <app-professores></app-professores>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef.hide()">
+      Fechar
+    </button>
+  </div>
+</ng-template>
 

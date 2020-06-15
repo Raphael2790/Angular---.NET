@@ -27,7 +27,7 @@
       formControlName="materia">
     </div>
     <div class="form-group">
-    <button type="submit" class="btn btn-primary" [disabled]="!TeacherForm.valid">Enviar</button>
+    <button type="submit" class="btn btn-success" [disabled]="!TeacherForm.valid">Enviar</button>
     </div>
   </form>
 </div>
@@ -37,18 +37,35 @@
   <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Disciplina</th>
+        <th scope="col">Opções</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let teacher of teachers" style="cursor: pointer;" (click)="selectTeacher(teacher)">
-        <th scope="row">{{teacher.id}}</th>
+      <tr *ngFor="let teacher of teachers" style="cursor: pointer;" >
+        <td><button class="text-dark btn btn-sm btn-outline-warning" (click)="selectTeacher(teacher)">Detalhes</button></td>
+        <td scope="row">{{teacher.id}}</td>
         <td>{{teacher.nome}}</td>
         <td>{{teacher.materia}}</td>
+        <td>
+          <div class="btngroup">
+            <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Alunos</button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 </div>
+ 
+<ng-template #template>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn pull-right" aria-label="Close" (click)="modalRef.hide()">Fechar</button>
+  </div>
+</ng-template>

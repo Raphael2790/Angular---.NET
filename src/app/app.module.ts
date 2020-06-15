@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       BrowserAnimationsModule,
       BsDropdownModule.forRoot(),
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      ModalModule.forRoot()
    ],
    providers: [],
    bootstrap: [

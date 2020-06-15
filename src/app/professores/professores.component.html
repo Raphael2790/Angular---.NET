@@ -1,20 +1,22 @@
-<div *ngIf="SelectedTeacher">
-  <div class="row">
+<div class="row">
+
+  <div class="col-sm-6" *ngIf="SelectedTeacher">
+    <div class="row">
     <div class="mr-auto">
-      <app-titulo [titulo]="'Professor: ' + SelectedTeacher.id"></app-titulo>
+      <app-titulo [titulo]="'Cod.Professor: ' + SelectedTeacher.id"></app-titulo>
     </div>
     <div class="mt-1">
-      <button class="btn btn-warning" (click)="clearTeacher()">Lista Professores</button>
+      <button class="btn btn-outline-danger" (click)="clearTeacher()">Fechar</button>
     </div>
-  </div>
-  <form>
+    </div>
+  <form [formGroup]="TeacherForm" (submit)="teacherSubmit()">
     <div class="form-group">
       <label for="exampleInputEmail1">Nome</label>
       <input type="text" 
       class="form-control" 
       aria-describedby="emailHelp" 
       placeholder="Seu primeiro nome"
-      value="{{SelectedTeacher.nome}}">
+      formControlName="nome">
     </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Disciplina</label>
@@ -22,13 +24,15 @@
       class="form-control" 
       aria-describedby="celHelp" 
       placeholder="Disciplina que leciona"
-      value="{{SelectedTeacher.materia}}">
+      formControlName="materia">
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary" [disabled]="!TeacherForm.valid">Enviar</button>
+    </div>
   </form>
 </div>
 
-<div *ngIf="!SelectedTeacher">
+<div [ngClass]="{'col-sm-12':!SelectedTeacher, 'col-sm-6':SelectedTeacher}">
   <app-titulo [titulo]="titulo"></app-titulo>
   <table class="table table-hover">
     <thead class="thead-dark">
@@ -46,5 +50,5 @@
       </tr>
     </tbody>
   </table>
-
+</div>
 </div>

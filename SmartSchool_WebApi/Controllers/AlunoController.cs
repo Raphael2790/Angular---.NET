@@ -46,7 +46,7 @@ namespace SmartSchool_WebApi.Controllers
       }
     }
 
-    [HttpGet("{ByDisciplina/{disciplinaId}}")]
+    [HttpGet("ByDisciplina/{disciplinaId}")]
     public async Task<IActionResult> GetByDisciplinaId(int DisciplinaId)
     {
       try
@@ -105,7 +105,7 @@ namespace SmartSchool_WebApi.Controllers
       return BadRequest();
     }
 
-    [HttpDelete("{alunoId}")]
+    [HttpDelete("{{alunoId}}")]
     public async Task<IActionResult> Delete(int alunoId)
     {
       try

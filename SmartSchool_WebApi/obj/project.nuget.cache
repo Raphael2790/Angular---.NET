@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZeVmpP+qMknCequiDW6I8cbVdTHTzSfGOMMJRdh+879UwR/TAxHQdi3h4BLrKAlBVEmnHaxNFWL/GFRqTw4Vvw==",
+  "dgSpecHash": "/v1tTog+fvhK5nufbx20uLEHWLnwILd4IVwcSAW9l5WHSu7JumRxAop8C7fo076OL4FbXdZ0tk5IYRoisyzN5g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
+  "projectFilePath": "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.5\\microsoft.aspnetcore.jsonpatch.3.1.5.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.5\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.5.nupkg.sha512",

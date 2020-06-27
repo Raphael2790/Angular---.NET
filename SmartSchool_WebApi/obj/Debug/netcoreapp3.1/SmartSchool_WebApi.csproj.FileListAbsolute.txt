@@ -59,3 +59,7 @@ C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\bin\De
 C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\obj\Debug\netcoreapp3.1\SmartSchool_WebApi.csproj.CoreCompileInputs.cache
 C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\obj\Debug\netcoreapp3.1\SmartSchool_WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\RSS_s\OneDrive\Área de Trabalho\Angular .NET\SmartSchool_WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

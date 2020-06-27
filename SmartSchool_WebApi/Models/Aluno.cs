@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SmartSchool_WebApi.Models
 {
   public class Aluno
@@ -18,5 +20,6 @@ namespace SmartSchool_WebApi.Models
     public string Name { get; set; }
     public string Sobrenome { get; set; }
     public string Telefone { get; set; }
+    public IEnumerable<AlunoDisciplina> AlunosDisciplinas { get; set; }
   }
 }

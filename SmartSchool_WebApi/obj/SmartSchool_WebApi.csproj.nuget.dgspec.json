@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj": {}
+    "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj": {
+    "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
+        "projectUniqueName": "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
         "projectName": "SmartSchool_WebApi",
-        "projectPath": "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
+        "projectPath": "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
         "packagesPath": "C:\\Users\\RSS_s\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\obj\\",
+        "outputPath": "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RSS_s\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.5, )"

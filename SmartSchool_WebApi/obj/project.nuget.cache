@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3B+IYpOh51mvmy6ggkSIxjD2m5yeQ0aSCOI614CNkfujSggv7qVQ8B/LMBqia0QN6bEU+UDPcc3G4GICEZPr8A==",
+  "dgSpecHash": "ZeVmpP+qMknCequiDW6I8cbVdTHTzSfGOMMJRdh+879UwR/TAxHQdi3h4BLrKAlBVEmnHaxNFWL/GFRqTw4Vvw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
+  "projectFilePath": "c:\\Users\\RSS_s\\OneDrive\\Área de Trabalho\\Angular .NET\\SmartSchool_WebApi\\SmartSchool_WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.5\\microsoft.aspnetcore.jsonpatch.3.1.5.nupkg.sha512",
+    "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.5\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.5.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -29,6 +31,8 @@
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.5\\microsoft.extensions.logging.abstractions.3.1.5.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.extensions.options\\3.1.5\\microsoft.extensions.options.3.1.5.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.5\\microsoft.extensions.primitives.3.1.5.nupkg.sha512",
+    "C:\\Users\\RSS_s\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\RSS_s\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
     "C:\\Users\\RSS_s\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",

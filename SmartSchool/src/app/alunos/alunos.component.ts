@@ -2,6 +2,8 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Aluno } from '../models/Aluno';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { AlunoService } from './aluno.service';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-alunos',
@@ -16,13 +18,7 @@ export class AlunosComponent implements OnInit {
   public SelectedStudent: Aluno;
   public TextoSimples: string;
 
-  public alunos = [
-    { id: 1, nome: "Marta", sobrenome: "Kent", telefone: 54547878 },
-    { id: 2, nome: "Rogerio", sobrenome: "Arthur", telefone: 58251445 },
-    { id: 3, nome: "Lucas", sobrenome: "Delfino", telefone: 12457896 },
-    { id: 4, nome: "Arthur", sobrenome: "Gabriel", telefone: 121412525 },
-    { id: 5, nome: "Gabriel", sobrenome: "Silva", telefone: 36362515 },
-    { id: 6, nome: "José", sobrenome: "Augusto", telefone: 12015548 }]
+  public alunos:Aluno[];
 
    
   openModal(template: TemplateRef<any>) {
@@ -30,23 +26,49 @@ export class AlunosComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder,
-              private modalService: BsModalService) {
+              private modalService: BsModalService,
+              private alunoService : AlunoService) {
     this.criarForm();
   }
 
   ngOnInit(): void {
+    this.carregarAlunos();
+  }
+
+  carregarAlunos() {
+    this.alunoService.getAll().subscribe(
+      (alunos : Aluno[]) => {
+        this.alunos = alunos;
+      },
+      (error:any) => {
+          console.log(error)
+      }
+    )
   }
 
   criarForm() {
     this.AlunoForm = this.fb.group({
-      nome: ['', Validators.required],
+      id:[''],
+      name: ['', Validators.required],
       sobrenome: ['', Validators.required],
       telefone: ['', Validators.required]
     })
   }
 
+  salvarAluno(aluno: Aluno) {
+    this.alunoService.put(aluno.id , aluno ).subscribe(
+      (data: Aluno) => {
+        console.log(data);
+        this.carregarAlunos();
+      },
+      (error: any) => {
+        console.log(error);
+      }
+    )
+  }
+
   alunoSubmit() {
-    console.log(this.AlunoForm.value)
+    this.salvarAluno(this.AlunoForm.value);
   }
 
   selectStudent(aluno: Aluno) {

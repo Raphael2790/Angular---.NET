@@ -3,7 +3,7 @@
   <div class="col-sm-6" *ngIf="SelectedStudent">
     <div class="row">
       <div class="mr-auto">
-        <app-titulo [titulo]="'Cod.Aluno: '+ SelectedStudent.id"></app-titulo>
+        <app-titulo [titulo]="'Cod.Aluno: '+ SelectedStudent.id.toString()"></app-titulo>
       </div>
       <div class="mt-1">
         <button class="btn btn-sm btn-outline-danger" (click)="clearStudent()">Fechar</button>
@@ -16,7 +16,7 @@
         class="form-control" 
         aria-describedby="emailHelp" 
         placeholder="Seu primeiro nome"
-        formControlName="nome">
+        formControlName="name">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Sobrenome</label>
@@ -30,8 +30,7 @@
         <label for="exampleInputEmail1">Telefone</label>
         <input type="number" 
         class="form-control" 
-        aria-describedby="celHelp" 
-        placeholder="Seu primeiro nome"
+        aria-describedby="celHelp"
         formControlName="telefone">
         <small id="celHelp" class="form-text text-muted">Ex : (99) 99999-9999</small>
       </div>
@@ -58,7 +57,7 @@
         <tr *ngFor="let aluno of alunos">
           <td><button class="text-dark btn btn-sm btn-outline-warning"(click)="selectStudent(aluno)">Detalhes</button></td>
           <td scope="row">{{aluno.id}}</td>
-          <td>{{aluno.nome}}</td>
+          <td>{{aluno.name}}</td>
           <td>{{aluno.sobrenome}}</td>
           <td>{{aluno.telefone}}</td>
           <td>

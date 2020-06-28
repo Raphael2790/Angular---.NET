@@ -3,7 +3,7 @@
   <div class="col-sm-6" *ngIf="SelectedTeacher">
     <div class="row">
     <div class="mr-auto">
-      <app-titulo [titulo]="'Cod.Professor: ' + SelectedTeacher.id"></app-titulo>
+      <app-titulo [titulo]="'Cod.Professor: ' + SelectedTeacher.id.toString()"></app-titulo>
     </div>
     <div class="mt-1">
       <button class="btn btn-outline-danger" (click)="clearTeacher()">Fechar</button>
@@ -18,14 +18,14 @@
       placeholder="Seu primeiro nome"
       formControlName="nome">
     </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="exampleInputEmail1">Disciplina</label>
       <input type="text" 
       class="form-control" 
       aria-describedby="celHelp" 
       placeholder="Disciplina que leciona"
-      formControlName="materia">
-    </div>
+      formControlName="disciplina">
+    </div> -->
     <div class="form-group">
     <button type="submit" class="btn btn-success" [disabled]="!TeacherForm.valid">Enviar</button>
     </div>
@@ -45,11 +45,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let teacher of teachers" style="cursor: pointer;" >
-        <td><button class="text-dark btn btn-sm btn-outline-warning" (click)="selectTeacher(teacher)">Detalhes</button></td>
-        <td scope="row">{{teacher.id}}</td>
-        <td>{{teacher.nome}}</td>
-        <td>{{teacher.materia}}</td>
+      <tr *ngFor="let professor of professores" style="cursor: pointer;" >
+        <td><button class="text-dark btn btn-sm btn-outline-warning" (click)="selectTeacher(professor)">Detalhes</button></td>
+        <td scope="row">{{professor.id}}</td>
+        <td>{{professor.nome}}</td>
+        <td>{{professor.disciplina}}</td>
         <td>
           <div class="btngroup">
             <button class="btn btn-sm btn-outline-primary" (click)="openModal(template)">Alunos</button>
